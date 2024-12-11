@@ -1,1 +1,1 @@
-export const DB_NAME = "streamifydb"
+export const DB_NAME = "empowerherdb"
