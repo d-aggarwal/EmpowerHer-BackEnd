@@ -4,11 +4,9 @@ import bcrypt from "bcrypt"
 
 const userSchema = new Schema(
     {
-        username: {
+        fullName: {
             type: String,
             required: true,
-            unique: true,
-            lowercase: true,
             trim: true, 
             index: true
         },
@@ -16,7 +14,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            lowecase: true,
             trim: true, 
         },
         fullName: {
@@ -24,13 +21,6 @@ const userSchema = new Schema(
             required: true,
             trim: true, 
             index: true
-        },
-        avatar: {
-            type: String, // cloudinary url
-            required: true,
-        },
-        coverImage: {
-            type: String, // cloudinary url
         },
         password: {
             type: String,
@@ -62,7 +52,7 @@ userSchema.methods.generateAccessToken = function(){
         {
             _id: this._id,
             email: this.email,
-            username: this.username,
+            
             fullName: this.fullName
         },
         process.env.ACCESS_TOKEN_SECRET,

@@ -19,6 +19,6 @@ app.use(cookieParser());
 //routes import
 import userRouter from "./routes/user.routes.js";
 
-app.use("/EmpowerHer/users", userRouter);
+app.use("/api/users", userRouter);
 
 export default app;
