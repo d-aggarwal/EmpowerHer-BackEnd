@@ -18,7 +18,9 @@ app.use(cookieParser());
 
 //routes import
 import userRouter from "./routes/user.routes.js";
+import aimodelRouter from "./routes/aimodels.routes.js"; 
 
 app.use("/api/users", userRouter);
+app.use("/api/aimodels", aimodelRouter);
 
 export default app;
