@@ -21,4 +21,27 @@ router.post("/generate-strategy", async (req, res) => {
   }
 });
 
+router.post("/businessplan", async (req, res) => {
+
+  const  FormData  = req.body;
+
+    if (!FormData) {
+        return res.status(400).json({ message: 'Form data is missing' });
+    }
+
+  try {
+    const response = await fetch(`${API_URL}/plangenerate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
 export default router;
