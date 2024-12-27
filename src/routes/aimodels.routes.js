@@ -65,4 +65,26 @@ router.post("/generate-name", async (req, res) => {
   }
 });
 
+router.post("/generate-timeline", async (req, res) => {
+  const business_idea = req.body;
+
+  if (!business_idea) {
+    return res.status(400).json({ message: "Business Idea is missing" });
+  }
+
+  try {
+    const response = await fetch(`${API_URL}/timelinegenerate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
 export default router;
