@@ -9,8 +9,8 @@
     "dev-express": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
     "start-model1": "python /aimodels/businessplan.py",
     "start-model2": "python ./src/aimodels/marketingstrategy.py",
-    "start-model3": "cd ./src/aimodels && python namegenerator.py",
-    "start-model4": "cd /aimodels && python timelinegenerate.py"
+    "start-model3": "cd ./aimodels && python namegenerator.py",
+    "start-model4": "cd ./aimodels && python timelinegenerate.py"
   },
   "author": "Drishti Aggarwal",
   "license": "ISC",
