@@ -5,11 +5,17 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+    "dev": "concurrently \"npm run dev-express\" \"npm run start-model1\" \"npm run start-model2\" \"npm run start-model3\" \"npm run start-model4\"",
+    "dev-express": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "start-model1": "cd src/aimodels && python businessplan.py",
+    "start-model2": "cd src/aimodels && python marketingstrategy.py",
+    "start-model3": "cd src/aimodels && python namegenerator.py",
+    "start-model4": "cd src/aimodels && python timelinegenerate.py"
   },
   "author": "Drishti Aggarwal",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^9.1.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.4.2"
   },

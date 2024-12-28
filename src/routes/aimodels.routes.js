@@ -1,13 +1,18 @@
 import { Router } from "express";
 import fetch from "node-fetch"; // Make sure fetch is imported correctly
-const API_URL = process.env.FLASK_API_URL;
+const API_URL_S = process.env.FLASK_API_URL_STRATEGY;
+const API_URL_B = process.env.FLASK_API_URL_BUSSI;
+const API_URL_N = process.env.FLASK_API_URL_NAME;
+const API_URL_T = process.env.FLASK_API_URL_TIME;
+
+
 
 const router = Router();
 
 // Define the POST route for /api/generate-strategy
 router.post("/generate-strategy", async (req, res) => {
   try {
-    const response = await fetch(`${API_URL}/generate`, {
+    const response = await fetch(`${API_URL_S}/generate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -29,7 +34,7 @@ router.post("/businessplan", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL}/plangenerate`, {
+    const response = await fetch(`${API_URL_B}/plangenerate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -51,7 +56,7 @@ router.post("/generate-name", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL}/namegenerate`, {
+    const response = await fetch(`${API_URL_N}/namegenerate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -73,7 +78,7 @@ router.post("/generate-timeline", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL}/timelinegenerate`, {
+    const response = await fetch(`${API_URL_T}/timelinegenerate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
