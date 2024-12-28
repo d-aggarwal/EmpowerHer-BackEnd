@@ -11,19 +11,20 @@ const router = Router();
 
 // Define the POST route for /api/generate-strategy
 router.post("/generate-strategy", async (req, res) => {
-  try {
-    const response = await fetch(`${API_URL_S}/generate`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(req.body),
-    });
+  // try {
+  //   const response = await fetch(`${API_URL_S}/generate`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(req.body),
+  //   });
 
-    const data = await response.json();
-    res.status(response.status).json(data);
-  } catch (err) {
-    console.error("Error:", err);
-    res.status(500).json({ success: false, error: "Server error" });
-  }
+  //   const data = await response.json();
+  //   res.status(response.status).json(data);
+  // } catch (err) {
+  //   console.error("Error:", err);
+  //   res.status(500).json({ success: false, error: "Server error" });
+  // }
+  console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
 });
 
 router.post("/businessplan", async (req, res) => {
