@@ -13,7 +13,7 @@ const router = Router();
 router.post("/generate-strategy", async (req, res) => {
   console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
   try {
-    console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
+    // console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
     const response = await fetch(`${API_URL_S}/generate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
