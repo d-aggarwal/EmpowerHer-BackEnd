@@ -5,7 +5,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 from flask_cors import CORS  # Import CORS
 
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__),'..','..', '.env'))
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__),'..', '.env'))
  # Load .env file
 
 app = Flask(__name__)
