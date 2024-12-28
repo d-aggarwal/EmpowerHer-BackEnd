@@ -7,14 +7,14 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-express\" \"npm run start-model1\" \"npm run start-model2\" \"npm run start-model3\" \"npm run start-model4\"",
     "dev-express": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
-    "start-model1": "python ../modelai/businessplan.py", 
-    "start-model2": "python modelai/marketingstrategy.py",
-    "start-model3": "cd modelai && python namegenerator.py",
+    "start-model1": "python3 modelai/businessplan.py", 
+    "start-model2": "python modelai/marketingstrategy.py", 
+    "start-model3": "cd modelai && python3 namegenerator.py",
     "start-model4": "cd modelai && python timelinegenerate.py"
   },
   "author": "Drishti Aggarwal",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": { 
     "concurrently": "^9.1.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.4.2"
