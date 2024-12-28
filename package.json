@@ -10,7 +10,7 @@
     "start-model1": "python3 modelai/businessplan.py",  
     "start-model2": "python3 modelai/marketingstrategy.py", 
     "start-model3": "python3 modelai/namegenerator.py",
-    "start-model4":  "cd ../modelai && python3 timelinegenerate.py"
+    "start-model4":  "python3 modelai/timelinegenerate.py"
   },
   "author": "Drishti Aggarwal",
   "license": "ISC",
