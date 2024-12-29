@@ -14,7 +14,7 @@ router.post("/generate-strategy", async (req, res) => {
   console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
   try {
     // console.log("Hello from expresssssssssssssssssssssssssssssssssssss");
-    const response = await fetch(`${API_URL_S}/generate`, {
+    const response = await fetch(`${API_URL_S}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -38,7 +38,7 @@ router.post("/businessplan", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL_B}/plangenerate`, {
+    const response = await fetch(`${API_URL_B}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -60,7 +60,7 @@ router.post("/generate-name", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL_N}/namegenerate`, {
+    const response = await fetch(`${API_URL_N}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
@@ -82,7 +82,7 @@ router.post("/generate-timeline", async (req, res) => {
   }
 
   try {
-    const response = await fetch(`${API_URL_T}/timelinegenerate`, {
+    const response = await fetch(`${API_URL_T}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
