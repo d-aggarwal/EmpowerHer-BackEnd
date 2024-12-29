@@ -87,8 +87,9 @@ router.post("/generate-timeline", async (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
     });
-
+    
     const data = await response.json();
+    console.log(data);
     res.status(response.status).json(data);
   } catch (err) {
     console.error("Error:", err);
